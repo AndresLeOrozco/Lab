@@ -23,28 +23,48 @@ void Lista::InsertarInicio(int x){
 void Lista::Borrar(int pos){
 	Nodo* p = Inicio;
 	if (pos > 0 && pos <= cuentaNodos) {
-		while (pos != 1) {
-			p = p->getSiguiente();
-			pos--;
+		if (pos == 1 && cuentaNodos >= 1) {
+			Inicio = Inicio->getSiguiente();
+			delete p;
 		}
-		Nodo* aux = p->getSiguiente();
-		p->setSiguiente(aux->getSiguiente());
-		delete aux;
+		else if (pos > 1 && cuentaNodos > 1) {
+			while (pos > 1) {
+				p = p->getSiguiente();
+				pos--;
+			}
+			Nodo* aux = p->getAnterior();
+			aux->setSiguiente(p->getSiguiente());
+			if(p)
+			delete p;
+		}
+
+
 	}
 	else
 		cout << "Posicion Incorrecta" << endl;
-}
+	}
+
+
 Nodo* Lista::Buscar(int pos){
 	Nodo* p = Inicio;
 	if (pos > 0 && pos <= cuentaNodos) {
-		while (pos != 0) {
-			p = p->getSiguiente();
-			pos--;
+		if (pos == 1 && cuentaNodos >= 1) {
+			return Inicio;
 		}
-		return p;
+		else if (pos > 1 && cuentaNodos > 1) {
+			while (pos > 1) {
+				p = p->getSiguiente();
+				pos--;
+			}
+			return p;
+		}
+
+
 	}
-	else
-		cout << "No existe esa posicion" << endl;
+	else {
+		cout << "Posicion Incorrecta" << endl;
+		return nullptr;
+	}
 }
 void Lista::eliminarLista(){
 	Nodo* p = Inicio;

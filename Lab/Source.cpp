@@ -16,7 +16,16 @@ int main() {
 
 	cout << endl<<endl;
 
-	lis->Borrar()
+	/*lis->Borrar(1);
+	lis->Borrar(5);*/
+
+	lis->Imprimir();
+
+	cout << endl << endl;
+	if(lis->Buscar(1)->getValor())
+	cout << lis->Buscar(2)->getValor() << endl;
+	if (lis->Buscar(5)->getValor())
+	cout << lis->Buscar(5)->getValor() << endl;
 	delete lis;
 	return 0;
 }
