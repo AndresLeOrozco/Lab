@@ -20,12 +20,16 @@ int main() {
 	lis->Borrar(5);
 
 	lis->Imprimir();
-
-	cout << endl << endl;
-//	if(lis->Buscar(1)->getValor())
-	cout << lis->Buscar(1)->getValor() << endl;
-//	if (lis->Buscar(5)->getValor())
-	cout << lis->Buscar(4)->getValor() << endl;
+	//try {
+		cout << endl << endl;
+		if (lis->Buscar(1))
+			cout << lis->Buscar(1)->getValor() << endl;
+		if (lis->Buscar(5))
+			cout << lis->Buscar(5)->getValor() << endl;
+	//}
+	/*catch (...) {
+		cout << "Posicion Incorrecta" << endl;
+	}*/
 	delete lis;
 	return 0;
 }

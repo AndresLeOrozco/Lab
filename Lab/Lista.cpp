@@ -63,7 +63,8 @@ Nodo* Lista::Buscar(int pos){
 		}
 	}
 	else {
-        throw invalid_argument("Posicion no encontrada");
+		//throw invalid_argument("Posicion Incorrect");
+		return nullptr;
 	}
 }
 void Lista::eliminarLista(){
