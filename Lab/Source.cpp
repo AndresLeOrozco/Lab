@@ -16,8 +16,8 @@ int main() {
 
 	cout << endl<<endl;
 
-	/*lis->Borrar(1);
-	lis->Borrar(5);*/
+	lis->Borrar(1);
+	lis->Borrar(5);
 
 	lis->Imprimir();
 

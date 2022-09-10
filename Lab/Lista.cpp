@@ -25,7 +25,9 @@ void Lista::Borrar(int pos){
 	if (pos > 0 && pos <= cuentaNodos) {
 		if (pos == 1 && cuentaNodos >= 1) {
 			Inicio = Inicio->getSiguiente();
+            Inicio->setAnterior(p->getAnterior());
 			delete p;
+            cuentaNodos--;
 		}
 		else if (pos > 1 && cuentaNodos > 1) {
 			while (pos > 1) {
@@ -36,6 +38,7 @@ void Lista::Borrar(int pos){
 			aux->setSiguiente(p->getSiguiente());
 			if(p)
 			delete p;
+            cuentaNodos--;
 		}
 
 
