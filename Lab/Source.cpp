@@ -22,10 +22,10 @@ int main() {
 	lis->Imprimir();
 
 	cout << endl << endl;
-	if(lis->Buscar(1)->getValor())
-	cout << lis->Buscar(2)->getValor() << endl;
-	if (lis->Buscar(5)->getValor())
-	cout << lis->Buscar(5)->getValor() << endl;
+//	if(lis->Buscar(1)->getValor())
+	cout << lis->Buscar(1)->getValor() << endl;
+//	if (lis->Buscar(5)->getValor())
+	cout << lis->Buscar(4)->getValor() << endl;
 	delete lis;
 	return 0;
 }
